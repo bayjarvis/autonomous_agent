@@ -18,7 +18,7 @@ class QuestionContext:
         relevant_docs = search_documents(question, self.index, self.documents, n_results=5)
     
         numbered_documents = format_documents(relevant_docs)
-        question_context = f"This question is about the GitHub repository '{context.repo_name}' available at {context.github_url}. The most relevant documents are:\n\n{numbered_documents}"
+        question_context = f"This question is about the GitHub repository '{self.repo_name}' available at {self.github_url}. The most relevant documents are:\n\n{numbered_documents}"
     
         answer_with_sources = self.llm_chain.run(
             model=self.model_name,
