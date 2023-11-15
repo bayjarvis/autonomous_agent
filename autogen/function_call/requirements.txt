@@ -1,0 +1,3 @@
+pyautogen
+openai
+yfinance
